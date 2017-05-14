@@ -1,0 +1,37 @@
+# display using http://yuml.me
+[Node]^-[LeftUnaryNode]
+[LeftUnaryNode]^-[FactorialNode]
+[LeftUnaryNode]^-[PercentNode]
+[Node]^-[NumericNode]
+[Node]^-[LeadingSignNode]
+[Node]^-[BinaryNode]
+[BinaryNode]^-[ExponentNode]
+[BinaryNode]^-[MultiplyNode]
+[BinaryNode]^-[AddNode]
+
+
+# display using http://yuml.me
+# including attributes and operations
+[Node|tokens: ParseResults|__init__(tokens);evaluate()]^-[LeftUnaryNode]
+[LeftUnaryNode|opn: fn(value)|evaluate()]^-[FactorialNode|opn]
+[LeftUnaryNode]^-[PercentNode|opn]
+[Node]^-[NumericNode|evaluate()]
+[Node]^-[LeadingSignNode|evaluate()]
+[Node]^-[BinaryNode]
+[BinaryNode|opn_fn_map: dict()|evaluate()]^-[ExponentNode|opn_fn_map|__init__(tokens)]
+[BinaryNode]^-[MultiplyNode|opn_fn_map]
+[BinaryNode]^-[AddNode|opn_fn_map]
+
+
+# display using http://yuml.me
+# including attributes and operations
+# with abstract classes white and concrete classes wheat
+[Node|tokens: ParseResults|__init__(tokens);evaluate()]^-[LeftUnaryNode]
+[LeftUnaryNode|opn: fn(value)|evaluate()]^-[FactorialNode|opn{bg:wheat}]
+[LeftUnaryNode]^-[PercentNode|opn{bg:wheat}]
+[Node]^-[NumericNode|evaluate(){bg:wheat}]
+[Node]^-[LeadingSignNode|evaluate(){bg:wheat}]
+[Node]^-[BinaryNode]
+[BinaryNode|opn_fn_map: dict()|evaluate()]^-[ExponentNode|opn_fn_map|__init__(tokens){bg:wheat}]
+[BinaryNode]^-[MultiplyNode|opn_fn_map{bg:wheat}]
+[BinaryNode]^-[AddNode|opn_fn_map{bg:wheat}]
